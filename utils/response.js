@@ -9,7 +9,7 @@ const sendErrorResponse = (res, err)=>{
 }
 
 
-const sendResponse = (req, data, statusCode)=>{
+const sendResponse = (res, data, statusCode)=>{
     res.status(statusCode).json({
         data: data,
         status: true

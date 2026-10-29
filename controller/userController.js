@@ -10,10 +10,10 @@ exports.getUser = (req, res, next)=>{
 }
 
 exports.createUser = (req, res, next)=>{
-    const {name, email} = req.body;
+    const {name, email} = req.body || {};
 
     if(!name || !email){
-        return sendErrorResponse(res, {message:'name and Email are require, statusCode:404'});
+        return sendErrorResponse(res, {message:'name and Email are require', statusCode:404});
     }
     const user ={
         id: 1,
